@@ -4,7 +4,7 @@ function Header() {
         <div id='header'>
 
             <div className='title'>
-                <h1 className='title-name'>ALCHURI SAI PRANEETH REDDY</h1>
+                <h1 className='title-name'>Alchuri Sai Praneeth Reddy</h1>
             </div>
 
             <div id="header-right">

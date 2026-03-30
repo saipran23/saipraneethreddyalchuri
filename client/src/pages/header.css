@@ -4,6 +4,10 @@
     justify-content: space-around;
 }
 
+/* #header-right{
+    justify-content: flex-end;
+} */
+
 .title-name {
   margin: 0;
 }

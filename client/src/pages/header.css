@@ -1,0 +1,16 @@
+
+#header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title-name {
+  margin: 0;
+}
+
+.buttons {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    gap: 30px;
+}

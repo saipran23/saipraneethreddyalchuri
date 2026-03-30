@@ -1,16 +1,27 @@
-
-.skill{
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    background-color: #F6F6FA;
+.skill {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 10px;
+  border-radius: 8px;
 }
 
-.skill-icon{
-    height: 80px;
-    width: 80px;
+.skill-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.skill-name{
-    font-size: 40px;
+.skill-icon svg {
+  width: 90%;
+  height: 90%;
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 16px;
 }

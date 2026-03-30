@@ -40,11 +40,11 @@ function Skills() {
 
     return (
         <div>
-
-            {skills.map((skill) => (
-                <Skill key={skill.name} name={skill.name} svg={skill.svg} />
-            ))}
-
+            <div className="skills-icons">
+                {skills.map((skill) => (
+                    <Skill key={skill.name} name={skill.name} svg={skill.svg} />
+                ))}
+            </div>
         </div>
     )
 

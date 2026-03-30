@@ -7,7 +7,7 @@ function Hero() {
             <div className="intro">
                 <p className="hero-role">FULL STACK WEB DEVELOPER</p>
                 <h1 className="hero-title">
-                    Hello, my name <br />
+                    Hello, My name <br />
                     is Sai Praneeth Reddy
                 </h1>
 

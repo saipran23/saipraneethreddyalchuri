@@ -39,7 +39,14 @@ function Skills() {
     ];
 
     return (
-        <div>
+        <div id="skills-container">
+            <div className="skills-header">
+                <h2 className="skills-title">My Tech Stack</h2>
+                <p className="skills-description">
+                    Here are the technologies I work with to design and develop modern, responsive web applications.
+                </p>
+
+            </div>
             <div className="skills-icons">
                 {skills.map((skill) => (
                     <Skill key={skill.name} name={skill.name} svg={skill.svg} />

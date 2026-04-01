@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import "./loader.css";
 
 function Loader({ onComplete }) {
-    useEffect(() => {
-
+    useGSAP(() => {
+        // block doum -> up
+        let t = gsap.timeline();
         // 🧱 Blocks (UP ↔ DOWN loop)
-        gsap.to(".block", {
+        t.to(".block", {
             y: "-100%",
-            duration: 1.2,
+            duration: 1.8,
             stagger: 0.1,
             ease: "sine.inOut",
             // repeat: -1,
@@ -35,6 +37,15 @@ function Loader({ onComplete }) {
                 duration: 0.8,
                 ease: "power2.in",
             });
+            
+        t.to(".block", {
+            y: "100%",
+            duration: 1.8,
+            stagger: 0.1,
+            ease: "sine.inOut",
+            // repeat: -1,
+            yoyo: true,
+        });
 
     }, []);
 

@@ -1,5 +1,7 @@
 import "./skills.css"
 
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "./animations";
 import Skill from "../components/skill";
 import JavaIcon from "../components/icons/JavaIcon";
 import PythonIcon from "../components/icons/PythonIcon";
@@ -47,11 +49,24 @@ function Skills() {
                 </p>
 
             </div>
-            <div className="skills-icons">
+            {/* <div className="skills-icons">
                 {skills.map((skill) => (
                     <Skill key={skill.name} name={skill.name} svg={skill.svg} />
                 ))}
-            </div>
+            </div> */}
+            <motion.div
+                className="skills-icons"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}  // ✅ IMPORTANT
+            >
+                {skills.map((skill) => (
+                    <motion.div key={skill.name} variants={fadeUp}>
+                        <Skill name={skill.name} svg={skill.svg} />
+                    </motion.div>
+                ))}
+            </motion.div>
         </div>
     )
 

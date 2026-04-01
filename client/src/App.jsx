@@ -7,25 +7,35 @@ import About from './pages/about'
 import './App.css'
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Loader from "./pages/Loader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
 
   return (
     <>
-      <Header />
+      {loading ? (
+        <Loader onComplete={() => setLoading(false)} />
+      ) : (
+        <>
+          <Header />
 
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Hero />
-            <Skills />
-          </>
-        } />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <Skills />
+                </>
+              }
+            />
+            <Route path="/about" element={<About />} />
+          </Routes>
 
-        <Route path="/about" element={<About />} />
-      </Routes>
-
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   )
 }

@@ -1,10 +1,25 @@
 import React, { useState } from "react";
 import "./contactMe.css";
-
+import axiosInstance from "../api/axios";
 function Contactme() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("message", message);
+
+        const res = await axiosInstance.post("/contact", formData);
+        console.log(res);
+        setEmail('');
+        setName('');
+        setMessage('');
+        alert("form submitted");
+    }
 
     return (
         <div className="contactMe-section">
@@ -14,7 +29,7 @@ function Contactme() {
             </div>
             <div className="contactMe">
 
-                <form className="form-container">
+                <form className="form-container" onSubmit={handleSubmit}>
                     <label>Name</label>
                     <input
                         type="text"

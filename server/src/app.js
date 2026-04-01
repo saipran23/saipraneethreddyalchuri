@@ -10,8 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "https://saipraneethreddyalchuri.vercel.app",
-    credentials: true,
+    origin: "https://saipraneethreddyalchuri.vercel.app"
   }),
 );
 

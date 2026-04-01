@@ -9,7 +9,7 @@ function Footer() {
     return (
         <div id="footer-section">
             <div className="wave">
-                <img src="/wave.png" alt="wave" />
+                <img src="/wave2.png" alt="wave" />
             </div>
             <div className="line"></div>
             <div className="footer-content">

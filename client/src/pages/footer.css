@@ -1,10 +1,4 @@
-.line {
-  width: 150px;
-  height: 3px;
-  background: #FFD700;
-  margin: 20px auto;
-  border-radius: 2px;
-}
+
 
 .footer-icons {
   display: flex;
@@ -51,7 +45,6 @@
   text-align: center;
 }
 
-.line,
 .footer-icons {
   transform: translateY(-10px);
 }

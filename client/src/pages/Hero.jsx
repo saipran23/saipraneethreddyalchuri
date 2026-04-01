@@ -1,5 +1,6 @@
 import "./Hero.css"
-
+import ReactDOM from "react-dom/client";
+import { Link } from "react-router-dom";
 function Hero() {
 
     return (
@@ -25,9 +26,9 @@ function Hero() {
                         View LinkedIn
                     </a>
 
-                    <a href="#contact" className="touch-btn">
+                    <Link to="/about" className="touch-btn">
                         Get In Touch
-                    </a>
+                    </Link>
                 </div>
 
             </div>

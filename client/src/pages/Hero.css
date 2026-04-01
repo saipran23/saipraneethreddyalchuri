@@ -1,10 +1,10 @@
 #hero {
   display: flex;
-  justify-content: space-between; 
-  align-items: center;           
+  justify-content: space-between;
+  align-items: center;
   padding: 0 80px;
-  background-color: #F6F6FA;
-  
+  background-color: #f6f6fa;
+
   /* min-height: 90vh;                */
 }
 
@@ -12,7 +12,7 @@
   max-width: 550px;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .hero-title {
@@ -28,28 +28,28 @@
 .hero-role {
   margin-bottom: 10px;
   font-size: 25px;
-  color: #FBAE1B;
+  color: #fbae1b;
 }
 
-.hero-buttons{
-    display: flex;
-    gap: 30px;
-    padding: 10px;
+.hero-buttons {
+  display: flex;
+  gap: 30px;
+  padding: 10px;
 }
 
-.hero-buttons a{
-    text-decoration: none;
-    color: black;
-    padding: 15px;
-    border-radius: 10px;
+.hero-buttons a {
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-.linkdin-btn{
-    border: 1px black solid;
+.linkdin-btn {
+  border: 1px black solid;
 }
 
-.touch-btn{
-    background-color: #FDBB22;
+.touch-btn {
+  background-color: #fdbb22;
 }
 
 #hero-image {

@@ -2,6 +2,16 @@ import "./Hero.css"
 import ReactDOM from "react-dom/client";
 import { Link } from "react-router-dom";
 import * as motion from "motion/react-client"
+
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+import { TextPlugin } from "gsap/TextPlugin";
+import { delay, stagger } from "framer-motion";
+
+gsap.registerPlugin(SplitText, TextPlugin, ScrollTrigger);
+
 function Hero() {
     const name = "Sai Praneeth Reddy";
     const roles = [
@@ -10,6 +20,43 @@ function Hero() {
         "Full Stack Developer",
         "FULL STACK WEB DEVELOPER",
     ];
+
+    useGSAP(() => {
+
+        const tl = gsap.timeline();
+
+        tl.from(".intro", {
+            x: "-100vw",
+            duration: 1.5,
+            ease: "power3.out"
+        })
+            .from("#hero-image", {
+                x: "100vw",
+                duration: 1.5,
+                ease: "power3.out"
+            }, "<"); 
+
+        tl.from(".hero-desc", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.5");
+
+        tl.from(".hero-buttons", {
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+            filter: "blur(6px)",
+            duration: 0.8,
+            ease: "power3.out"
+        }, "-=0.6");
+
+
+    }, [])
+
+
+
 
     return (
         <div id="hero">
@@ -22,7 +69,7 @@ function Hero() {
                             key={i}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: i * 0.10 , ease: "circInOut" }}
+                            transition={{ delay: i * 0.10, ease: "circInOut" }}
                         >
                             {char}
                         </motion.span>
@@ -50,21 +97,7 @@ function Hero() {
 
             </div>
             <div id="hero-image">
-                {/* <img src="/profile.png" alt="Profile" className="hero-img" /> */}
-                <motion.img
-                    src="/profile.png"   // your image path
-                    alt="profile"
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                        duration: 1.0,
-                        scale: { type: "spring", bounce: 0.3 },
-                    }}
-                    style={{
-                        maxHeight: "85vh",
-                        paddingBottom: "10px",
-                    }}
-                />
+                <img src="/profile.png" alt="Profile" className="hero-img" />
             </div>
         </div>
     )

@@ -1,8 +1,9 @@
 body {
- background-color: #F6F6FA;
+ background-color: #0a0a0a;
  padding: 0;
  margin: 0;
  font-family: 'Inter', sans-serif;
+ color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {

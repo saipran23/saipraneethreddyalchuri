@@ -3,10 +3,6 @@ function Header() {
     return (
         <div id='header'>
 
-            <div className='title'>
-                <h1 className='title-name'>Alchuri Sai Praneeth Reddy</h1>
-            </div>
-
             <div id="header-right">
                 <ul className="buttons">
                     <li className="header-button">

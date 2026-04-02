@@ -7,7 +7,7 @@ function Loader({ onComplete }) {
     useGSAP(() => {
         // block doum -> up
         let t = gsap.timeline();
-        // 🧱 Blocks (UP ↔ DOWN loop)
+    
         t.to(".block", {
             y: "-100%",
             duration: 1.8,
@@ -16,6 +16,8 @@ function Loader({ onComplete }) {
             // repeat: -1,
             yoyo: true,
         });
+
+
 
         // 🔤 Text animation
         const tl = gsap.timeline({
@@ -38,14 +40,6 @@ function Loader({ onComplete }) {
                 ease: "power2.in",
             });
             
-        t.to(".block", {
-            y: "100%",
-            duration: 1.8,
-            stagger: 0.1,
-            ease: "sine.inOut",
-            // repeat: -1,
-            yoyo: true,
-        });
 
     }, []);
 

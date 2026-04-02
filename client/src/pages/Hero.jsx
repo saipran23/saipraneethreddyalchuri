@@ -6,11 +6,8 @@ import * as motion from "motion/react-client"
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import { TextPlugin } from "gsap/TextPlugin";
-import { delay, stagger } from "framer-motion";
-
-gsap.registerPlugin(SplitText, TextPlugin, ScrollTrigger);
+gsap.registerPlugin( TextPlugin, ScrollTrigger);
 
 function Hero() {
     const name = "Sai Praneeth Reddy";
@@ -34,7 +31,7 @@ function Hero() {
                 x: "100vw",
                 duration: 1.5,
                 ease: "power3.out"
-            }, "<"); 
+            }, "<");
 
         tl.from(".hero-desc", {
             opacity: 0,
@@ -51,6 +48,17 @@ function Hero() {
             duration: 0.8,
             ease: "power3.out"
         }, "-=0.6");
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true,
+            }
+        })
+            .to('.intro', { y: -120, opacity: 0.9 }, 0)
+            .to('#hero-image', { y: -150, scale: 0.95 }, 0)
 
 
     }, [])

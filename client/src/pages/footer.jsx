@@ -8,10 +8,7 @@ function Footer() {
     let year = d.getFullYear();
     return (
         <div id="footer-section">
-            <div className="wave">
-                <img src="/wave2.png" alt="wave" />
-            </div>
-            <div className="line"></div>
+            {/* <div className="line"></div> */}
             <div className="footer-content">
                 <div className="footer-icons">
 

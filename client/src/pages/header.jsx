@@ -1,9 +1,37 @@
 import './header.css'
-function Header() {
-    return (
-        <div id='header'>
 
-            <div id="header-right">
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+function Header() {
+
+    useGSAP(() => {
+
+        const navTween = gsap.timeline({
+            scrollTrigger: {
+                trigger: 'nav',
+                start: 'bottom top'
+            }
+        });
+
+        navTween.fromTo('nav',
+            { backgroundColor: 'transparent' },
+            {
+                backgroundColor: '#00000050',
+                backgroundFilter: 'blur(10px)',
+                duration: 1,
+                ease: 'power1.inOut'
+            }
+        );
+
+    }, [])
+
+
+    return (
+        <nav>
+            <div id='header'>
                 <ul className="buttons">
                     <li className="header-button">
                         About
@@ -18,9 +46,7 @@ function Header() {
                     </li>
                 </ul>
             </div>
-
-
-        </div>
+        </nav>
     )
 }
 

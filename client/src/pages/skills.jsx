@@ -1,7 +1,11 @@
-import "./skills.css"
+import "./skills.css";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { motion } from "framer-motion";
-import { fadeUp, staggerContainer } from "./animations";
+gsap.registerPlugin(ScrollTrigger);
+
 import Skill from "../components/skill";
 import JavaIcon from "../components/icons/JavaIcon";
 import PythonIcon from "../components/icons/PythonIcon";
@@ -19,57 +23,178 @@ import GitHubIcon from "../components/icons/GitHubIcon";
 import PostmanIcon from "../components/icons/postmanIcon";
 import CIcon from "../components/icons/CIcon";
 import NpmIcon from "../components/icons/NpmIcon";
-function Skills() {
 
-    const skills = [
-        { name: "Java", svg: <JavaIcon /> },
-        { name: "Python", svg: <PythonIcon /> },
-        { name: "C", svg: <CIcon /> },
-        { name: "JavaScript", svg: <JsIcon /> },
-        { name: "Html5", svg: <HtmlIcon /> },
-        { name: "Css3", svg: <CssIcon /> },
-        { name: "Bootstrap", svg: <BootStrapIcon /> },
-        { name: "Express", svg: <ExpressIcon /> },
-        { name: "Node", svg: <NodeIcon /> },
-        { name: "Npm", svg: <NpmIcon /> },
-        { name: "React", svg: <ReactIcon /> },
-        { name: "Postgresql", svg: <PostgresqlIcon /> },
-        { name: "MySql", svg: <MySqlIcon /> },
-        { name: "Git", svg: <GitIcon /> },
-        { name: "GitHub", svg: <GitHubIcon /> },
-        { name: "Postman", svg: <PostmanIcon /> },
+function Skills() {
+    const rootRef = useRef(null);
+
+    const skillCategories = [
+        {
+            category: "Languages",
+            skills: [
+                { name: "Java", svg: <JavaIcon /> },
+                { name: "Python", svg: <PythonIcon /> },
+                { name: "C", svg: <CIcon /> },
+                { name: "JavaScript", svg: <JsIcon /> },
+            ],
+        },
+        {
+            category: "Frontend",
+            skills: [
+                { name: "Html5", svg: <HtmlIcon /> },
+                { name: "Css3", svg: <CssIcon /> },
+                { name: "Bootstrap", svg: <BootStrapIcon /> },
+                { name: "React", svg: <ReactIcon /> },
+            ],
+        },
+        {
+            category: "Backend",
+            skills: [
+                { name: "Node", svg: <NodeIcon /> },
+                { name: "Express", svg: <ExpressIcon /> },
+            ],
+        },
+        {
+            category: "Databases",
+            skills: [
+                { name: "Postgresql", svg: <PostgresqlIcon /> },
+                { name: "MySql", svg: <MySqlIcon /> },
+            ],
+        },
+        {
+            category: "Tools",
+            skills: [
+                { name: "Git", svg: <GitIcon /> },
+                { name: "GitHub", svg: <GitHubIcon /> },
+                { name: "Postman", svg: <PostmanIcon /> },
+                { name: "Npm", svg: <NpmIcon /> },
+            ],
+        },
     ];
 
+    useGSAP(
+        () => {
+            const root = rootRef.current;
+            if (!root) return;
+
+            const reduced =
+                typeof window !== "undefined" &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            const blocks = gsap.utils.toArray(
+                root.querySelectorAll(".skills-block")
+            );
+
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: ".skills-title",
+                        start: "top 88%",
+                        end: "top 38%",
+                        scrub: 1.25,
+                        invalidateOnRefresh: true,
+                    },
+                })
+                .fromTo(
+                    ".skills-title",
+                    { opacity: 0, y: 32 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.42,
+                        ease: "power1.out",
+                    }
+                )
+                // .fromTo(
+                //     ".skills-title",
+                //     { opacity: 0, y: 22 },
+                //     {
+                //         opacity: 1,
+                //         y: 0,
+                //         duration: 0.58,
+                //         stagger: 0.045,
+                //         ease: "power1.out",
+                //     },
+                //     0.1
+                // );
+
+
+
+
+            blocks.forEach((block) => {
+                const title = block.querySelector(".skills-category");
+                const cards = block.querySelectorAll(".skill-item");
+                if (!title) return;
+
+                if (reduced) {
+                    gsap.set([title, ...cards], {
+                        clearProps: "transform,opacity",
+                    });
+                    return;
+                }
+
+
+                gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: block,
+                            start: "top 88%",
+                            end: "top 38%",
+                            scrub: 1.25,
+                            invalidateOnRefresh: true,
+                        },
+                    })
+                    .fromTo(
+                        title,
+                        { opacity: 0, y: 32 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.42,
+                            ease: "power1.out",
+                        }
+                    )
+                    .fromTo(
+                        cards,
+                        { opacity: 0, y: 22 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.58,
+                            stagger: 0.045,
+                            ease: "power1.out",
+                        },
+                        0.1
+                    );
+            });
+        },
+        { scope: rootRef, dependencies: [] }
+    );
+
     return (
-        <div id="skills-container">
+        <div id="skills-container" ref={rootRef}>
             <div className="skills-header">
                 <h2 className="skills-title">My Tech Stack</h2>
-                <p className="skills-description">
-                    Here are the technologies I work with to design and develop modern, responsive web applications.
-                </p>
-
             </div>
-            {/* <div className="skills-icons">
-                {skills.map((skill) => (
-                    <Skill key={skill.name} name={skill.name} svg={skill.svg} />
-                ))}
-            </div> */}
-            <motion.div
-                className="skills-icons"
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}  // ✅ IMPORTANT
-            >
-                {skills.map((skill) => (
-                    <motion.div key={skill.name} variants={fadeUp}>
-                        <Skill name={skill.name} svg={skill.svg} />
-                    </motion.div>
-                ))}
-            </motion.div>
-        </div>
-    )
 
+            <div id="skills-section">
+                {skillCategories.map((section) => (
+                    <div className="skills-block" key={section.category}>
+                        <h2 className="skills-category">{section.category}</h2>
+                        <div className="skills-grid">
+                            {section.skills.map((skill, index) => (
+                                <div
+                                    className="skill-item"
+                                    key={`${section.category}-${skill.name}-${index}`}
+                                >
+                                    <Skill name={skill.name} svg={skill.svg} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
 
 export default Skills;

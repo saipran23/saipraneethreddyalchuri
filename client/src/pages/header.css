@@ -1,15 +1,16 @@
 
-#header {
-    display: flex;
-    justify-content: space-around;
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-/* #header-right{
-    justify-content: flex-end;
-} */
-
-.title-name {
-  margin: 0;
+#header {
+    display: flex;
+    justify-content: center;
+    background-color: #212121;
 }
 
 .buttons {

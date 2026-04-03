@@ -1,15 +1,21 @@
 import "./Hero.css"
+import React, { useState, useRef } from "react";
 import ReactDOM from "react-dom/client";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as motion from "motion/react-client"
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-gsap.registerPlugin( TextPlugin, ScrollTrigger);
+gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 function Hero() {
+
+    const overlayRef = useRef(null);
+    const navigate = useNavigate();
+
+
     const name = "Sai Praneeth Reddy";
     const roles = [
         "Mobile Developer",
@@ -63,11 +69,23 @@ function Hero() {
 
     }, [])
 
+    const handleClick = () => {
+        gsap.to(overlayRef.current, {
+            top: "0%",
+            duration: 0.9,
+            ease: "power3.inOut",
+            onComplete: () => {
+                navigate("/about");
+            }
+        });
+    };
+
 
 
 
     return (
         <div id="hero">
+            <div ref={overlayRef} className="transition-overlay"></div>
             <div className="intro">
                 <p className="hero-role">FULL STACK WEB DEVELOPER</p>
                 <h1 className="hero-title">
@@ -98,9 +116,9 @@ function Hero() {
                         View LinkedIn
                     </a>
 
-                    <Link to="/about" className="touch-btn">
+                    <button onClick={handleClick} className="touch-btn">
                         Get In Touch
-                    </Link>
+                    </button>
                 </div>
 
             </div>

@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  will-change: transform, opacity;
 }
 
 input,
@@ -21,6 +22,7 @@ textarea {
   border-radius: 8px;
   border: 1px solid #ccc;
   outline: none;
+  will-change: transform, opacity;
 }
 
 .textarea {
@@ -28,21 +30,23 @@ textarea {
   resize: vertical;
 }
 
-button {
+.send-btn {
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background: #fdb820;
+  background: #00f050;
   color: white;
   font-size: 16px;
   cursor: pointer;
-  margin: 0 200px;
-  margin-top: 5px;
+  margin: 5px 200px;
+  will-change: transform, opacity;
+  /* margin-top: 5px; */
 }
 
 .contactme-title-sec {
   max-width: 550px;
   padding: 20px 110px;
+  will-change: transform, opacity;
 }
 
 .contactme-title {
@@ -53,7 +57,11 @@ button {
 .line {
   width: 250px;
   height: 3px;
-  background: #ffd700;
+  background: #00f050;
   margin: 10px 0;
   border-radius: 2px;
+}
+
+.form-container label {
+  will-change: transform, opacity;
 }

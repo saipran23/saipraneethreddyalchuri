@@ -91,7 +91,7 @@ function Skills() {
                         trigger: ".skills-title",
                         start: "top 88%",
                         end: "top 38%",
-                        scrub: 1.25,
+                        scrub: 0.8,
                         invalidateOnRefresh: true,
                     },
                 })
@@ -101,25 +101,10 @@ function Skills() {
                     {
                         opacity: 1,
                         y: 0,
-                        duration: 0.42,
+                        duration: 0.35,
                         ease: "power1.out",
                     }
-                )
-                // .fromTo(
-                //     ".skills-title",
-                //     { opacity: 0, y: 22 },
-                //     {
-                //         opacity: 1,
-                //         y: 0,
-                //         duration: 0.58,
-                //         stagger: 0.045,
-                //         ease: "power1.out",
-                //     },
-                //     0.1
-                // );
-
-
-
+                );
 
             blocks.forEach((block) => {
                 const title = block.querySelector(".skills-category");
@@ -133,14 +118,13 @@ function Skills() {
                     return;
                 }
 
-
                 gsap
                     .timeline({
                         scrollTrigger: {
                             trigger: block,
                             start: "top 88%",
                             end: "top 38%",
-                            scrub: 1.25,
+                            scrub: 0.8,
                             invalidateOnRefresh: true,
                         },
                     })
@@ -150,7 +134,7 @@ function Skills() {
                         {
                             opacity: 1,
                             y: 0,
-                            duration: 0.42,
+                            duration: 0.35,
                             ease: "power1.out",
                         }
                     )
@@ -160,11 +144,11 @@ function Skills() {
                         {
                             opacity: 1,
                             y: 0,
-                            duration: 0.58,
-                            stagger: 0.045,
+                            duration: 0.45,
+                            stagger: 0.03,
                             ease: "power1.out",
                         },
-                        0.1
+                        0.05
                     );
             });
         },

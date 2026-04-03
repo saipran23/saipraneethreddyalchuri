@@ -32,10 +32,12 @@
   color: inherit;
 }
 
-.email{
-  padding-left: 30px;
+
+
+.footer-line{
+  width: 250px;
+    height: 3px;
+    background: #00F050;
+    margin: 10px 0;
+    border-radius: 2px;
 }
-
-
-
-

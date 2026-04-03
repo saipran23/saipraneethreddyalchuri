@@ -10,7 +10,7 @@ function Footer() {
         <div id="footer-section">
             <div className="footer-content">
 
-                    <h3 className="email">asaipr1223@gmail.com</h3>
+                    <div className="footer-line"></div>
 
                 <div className="footer-icons">
                     <a href="https://github.com/saipran23" target="_blank" rel="noopener noreferrer">

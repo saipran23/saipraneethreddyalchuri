@@ -35,23 +35,33 @@
 
 .hero-buttons {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 30px;
   padding: 10px;
 }
 
-.hero-buttons a {
+/* .hero-buttons a , .hero-buttons button {
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+} */
+
+.linkdin-btn {
+  border: 1px whitesmoke solid;
   text-decoration: none;
   color: white;
   padding: 15px;
   border-radius: 10px;
 }
 
-.linkdin-btn {
-  border: 1px whitesmoke solid;
-}
-
 .touch-btn {
   background-color: #00F050;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  margin: 0;
 }
 
 #hero-image {
@@ -64,4 +74,14 @@
   max-height: 85vh;
   padding-bottom: 10px;
   /* object-fit: cover; */
+}
+
+.transition-overlay {
+  position: fixed;
+  top: 100%; /* start below screen */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #212121; /* or your theme */
+  z-index: 9999;
 }

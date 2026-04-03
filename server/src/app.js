@@ -15,12 +15,22 @@ app.use(express.urlencoded({ extended: true }));
 //   }),
 // );
 
-app.use(
-  cors({
-    origin: "https://saipraneethreddyalchuri.vercel.app"
+// app.use(
+//   cors({
+//     origin: "https://saipraneethreddyalchuri.vercel.app"
 
-  }),
-);
+//   }),
+// );
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://saipraneethreddyalchuri.vercel.app"
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+}));
+
 app.use("/api", contactRoutes);
 
 export default app;

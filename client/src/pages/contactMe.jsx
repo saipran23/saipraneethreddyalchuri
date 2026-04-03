@@ -83,7 +83,11 @@ function Contactme() {
         formData.append("message", message);
 
         try {
-            const request =  axiosInstance.post("/contact", formData);
+            const request =  axiosInstance.post("/contact",{
+                name,
+                email,
+                message,
+              });
             await toast.promise(request, {
                 loading: "Sending message...",
                 success: (res) => res.data.message || "Sent successfully 🚀",

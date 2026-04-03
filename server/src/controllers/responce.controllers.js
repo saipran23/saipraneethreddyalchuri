@@ -16,7 +16,7 @@ export const contact = async (req, res) => {
     );
 
     return res.status(201).json({
-      message: "Post created successfully",
+      message: "Send successfully",
     });
   } catch (err) {
     console.error("response -", err.message);

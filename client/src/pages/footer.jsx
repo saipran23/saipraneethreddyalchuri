@@ -8,10 +8,11 @@ function Footer() {
     let year = d.getFullYear();
     return (
         <div id="footer-section">
-            {/* <div className="line"></div> */}
             <div className="footer-content">
-                <div className="footer-icons">
 
+                    <h3 className="email">asaipr1223@gmail.com</h3>
+
+                <div className="footer-icons">
                     <a href="https://github.com/saipran23" target="_blank" rel="noopener noreferrer">
                         <GitHubIcon />
                     </a>

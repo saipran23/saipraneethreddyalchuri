@@ -18,7 +18,7 @@ function App() {
         <Loader onComplete={() => setLoading(false)} />
       ) : (
         <>
-          <Header />
+          {/* <Header /> */}
 
           <Routes>
             <Route

@@ -35,6 +35,7 @@ function Skills() {
                 { name: "Python", svg: <PythonIcon /> },
                 { name: "C", svg: <CIcon /> },
                 { name: "JavaScript", svg: <JsIcon /> },
+                
             ],
         },
         {

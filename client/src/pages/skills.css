@@ -55,9 +55,9 @@
   min-width: 0;
   display: grid;
   grid-template-columns: repeat(5, auto);
-  justify-content: start;
-  align-content: start;
-  column-gap: clamp(6px, 1vw, 30px);
+  justify-content: space-around;
+  align-content: center;
+  column-gap: clamp(6px, 1vw, 40px);
   row-gap: 6px;
 }
 

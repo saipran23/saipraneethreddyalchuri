@@ -9,6 +9,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader from "./pages/Loader";
 
+import ParticleBackground from './components/ParticleBackground'
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -19,7 +21,7 @@ function App() {
       ) : (
         <>
           {/* <Header /> */}
-
+          <ParticleBackground />
           <Routes>
             <Route
               path="/"

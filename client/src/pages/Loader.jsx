@@ -44,7 +44,7 @@ function Loader({ onComplete }) {
     }, []);
 
 
-    const name = "SAI PRANEETH REDDY"
+    const name = "PRANEETHREDDY"
 
     return (
         <div className="loader">
@@ -56,7 +56,7 @@ function Loader({ onComplete }) {
 
             <h1 className="loader-text">
                 {name.split("").map((char, i) => (
-                    <span key={i}>{char}</span>
+                    <span key={i}>{char} </span>
                 ))}
             </h1>
         </div>

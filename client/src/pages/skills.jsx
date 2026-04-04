@@ -23,6 +23,7 @@ import GitHubIcon from "../components/icons/GitHubIcon";
 import PostmanIcon from "../components/icons/postmanIcon";
 import CIcon from "../components/icons/CIcon";
 import NpmIcon from "../components/icons/NpmIcon";
+import EjsIcon from "../components/icons/EjsIcon";
 
 function Skills() {
     const rootRef = useRef(null);
@@ -52,6 +53,7 @@ function Skills() {
             skills: [
                 { name: "Node", svg: <NodeIcon /> },
                 { name: "Express", svg: <ExpressIcon /> },
+                { name: "Ejs", svg: <EjsIcon /> },
             ],
         },
         {

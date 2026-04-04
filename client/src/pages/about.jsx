@@ -42,14 +42,14 @@ function About() {
             y: 30,
             duration: 1,
             ease: "power3.out"
-        }, "-=0.5");
+        }, "-=0.3");
 
         tl.from(".resume-btn", {
             opacity: 0,
             y: 30,
             duration: 1,
             ease: "power3.out"
-        }, "-=0.5");
+        }, "-=0.4");
     })
 
     return (

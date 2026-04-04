@@ -21,20 +21,22 @@ function Contactme() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".contactMe-section",
-                    start: "top 88%",
-                    end: "top 38%",
-                    scrub: 1.2,
-                    invalidateOnRefresh: true,
+                    start: "top 90%",
+                    end: "top 30%",
+                    scrub: 1.5,
+                    // invalidateOnRefresh: true,
+                    // markers: true,
                 }
             });
 
+        
             tl.fromTo(".contactme-title-sec",
                 { opacity: 0, y: 32 },
                 {
                     opacity: 1,
                     y: 0,
                     duration: 0.42,
-                    ease: "power1.out"
+                    ease: "power4.inOut"
                 }
             )
                 .fromTo(".form-container",
@@ -43,7 +45,7 @@ function Contactme() {
                         opacity: 1,
                         y: 0,
                         duration: 0.42,
-                        ease: "power1.out"
+                        ease: "power4.inOut"
                     }, "<"
                 )
                 .fromTo(".form-container label, .form-container input, .form-container textarea",
@@ -53,7 +55,7 @@ function Contactme() {
                         y: 0,
                         duration: 0.45,
                         stagger: 0.05,
-                        ease: "power1.out"
+                        ease: "power4.inOut"
                     }, 0.1
                 )
                 .fromTo(".send-btn",
@@ -63,10 +65,12 @@ function Contactme() {
                         y: 0,
                         scale: 1,
                         duration: 0.42,
-                        ease: "power1.out"
+                        ease: "power4.inOut"
                     }, "-=0.2"
                 );
+
         }
+
     );
 
 
@@ -83,11 +87,11 @@ function Contactme() {
         formData.append("message", message);
 
         try {
-            const request =  axiosInstance.post("/contact",{
+            const request = axiosInstance.post("/contact", {
                 name,
                 email,
                 message,
-              });
+            });
             await toast.promise(request, {
                 loading: "Sending message...",
                 success: (res) => res.data.message || "Sent successfully 🚀",

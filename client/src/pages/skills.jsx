@@ -36,7 +36,7 @@ function Skills() {
                 { name: "Python", svg: <PythonIcon /> },
                 { name: "C", svg: <CIcon /> },
                 { name: "JavaScript", svg: <JsIcon /> },
-                
+
             ],
         },
         {
@@ -46,6 +46,7 @@ function Skills() {
                 { name: "Css3", svg: <CssIcon /> },
                 { name: "Bootstrap", svg: <BootStrapIcon /> },
                 { name: "React", svg: <ReactIcon /> },
+                
             ],
         },
         {
@@ -79,9 +80,9 @@ function Skills() {
             const root = rootRef.current;
             if (!root) return;
 
-            const reduced =
-                typeof window !== "undefined" &&
-                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            // const reduced =
+            //     typeof window !== "undefined" &&
+            //     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
             const blocks = gsap.utils.toArray(
                 root.querySelectorAll(".skills-block")
@@ -91,10 +92,9 @@ function Skills() {
                 .timeline({
                     scrollTrigger: {
                         trigger: ".skills-title",
-                        start: "top 88%",
+                        start: "top 80%",
                         end: "top 38%",
                         scrub: 1.25,
-                        invalidateOnRefresh: true,
                     },
                 })
                 .fromTo(
@@ -104,46 +104,31 @@ function Skills() {
                         opacity: 1,
                         y: 0,
                         duration: 0.42,
-                        ease: "power1.out",
+                        ease: "power4.out",
                     }
                 )
-                // .fromTo(
-                //     ".skills-title",
-                //     { opacity: 0, y: 22 },
-                //     {
-                //         opacity: 1,
-                //         y: 0,
-                //         duration: 0.58,
-                //         stagger: 0.045,
-                //         ease: "power1.out",
-                //     },
-                //     0.1
-                // );
-
-
-
 
             blocks.forEach((block) => {
                 const title = block.querySelector(".skills-category");
                 const cards = block.querySelectorAll(".skill-item");
                 if (!title) return;
 
-                if (reduced) {
-                    gsap.set([title, ...cards], {
-                        clearProps: "transform,opacity",
-                    });
-                    return;
-                }
+                // if (reduced) {
+                //     gsap.set([title, ...cards], {
+                //         clearProps: "transform,opacity",
+                //     });
+                //     return;
+                // }
 
 
                 gsap
                     .timeline({
                         scrollTrigger: {
                             trigger: block,
-                            start: "top 88%",
+                            start: "top 80%",
                             end: "top 38%",
                             scrub: 1.25,
-                            invalidateOnRefresh: true,
+                            // invalidateOnRefresh: true,
                         },
                     })
                     .fromTo(
@@ -153,7 +138,7 @@ function Skills() {
                             opacity: 1,
                             y: 0,
                             duration: 0.42,
-                            ease: "power1.out",
+                            ease: "power4.out",
                         }
                     )
                     .fromTo(
@@ -164,7 +149,7 @@ function Skills() {
                             y: 0,
                             duration: 0.58,
                             stagger: 0.045,
-                            ease: "power1.out",
+                            ease: "power4.out",
                         },
                         0.1
                     );

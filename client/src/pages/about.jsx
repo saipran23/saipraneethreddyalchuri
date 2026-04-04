@@ -16,15 +16,7 @@ function About() {
 
 
     useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".about-section",
-                start: "top 80%",
-                end: "top 30%",
-                toggleActions: "play none none none",
-                // markers: true // enable for debugging
-            }
-        });
+        const tl = gsap.timeline();
 
         tl.from(".about", {
             y: "300px",
@@ -33,23 +25,45 @@ function About() {
         })
             .from(".profile-circle", {
                 y: "300px",
-                duration: 1.5,
+                duration: 1,
                 ease: "power3.out"
             }, "<");
 
-        tl.from(".about-desc", {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            ease: "power3.out"
-        }, "-=0.3");
+        // tl.from(".about-desc", {
+        //     opacity: 0,
+        //     y: 30,
+        //     duration: 1,
+        //     ease: "power3.out"
+        // }, "-=0.1");
 
-        tl.from(".resume-btn", {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            ease: "power3.out"
-        }, "-=0.4");
+        // tl.from(".resume-btn", {
+        //     opacity: 0,
+        //     y: 30,
+        //     duration: 0.5,
+        //     ease: "power3.out"
+        // }, "-=0.1");
+
+        const t2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".contact-me-section",
+                start: "top 90%",
+                end: "top 20%",
+                scrub: 2,
+                // markers: true,
+            }
+        })
+
+        t2.to(".about", {
+            x: "-60vw",
+            y: "-60vh",
+            ease: "power3.inOut"
+        })
+            .to(".profile-circle", {
+                x: "60vw",
+                y: "-60vh",
+                ease: "power3.inOut"
+            }, "<");
+
     })
 
     return (
@@ -88,8 +102,9 @@ function About() {
                 </div>
 
             </div>
-
-            <Contactme />
+            <div className="contact-me-section">
+                <Contactme />
+            </div>
 
         </div>
     )

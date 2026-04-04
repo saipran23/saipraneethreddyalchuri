@@ -25,11 +25,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://saipraneethreddyalchuri.vercel.app"
+    "https://saipraneethreddyalchuri.vercel.app",
+    "https://saipraneethreddyalchuri-5l07tiz7c-saipran23s-projects.vercel.app"
   ],
   methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
-credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 }));
 
 app.use("/api", contactRoutes);

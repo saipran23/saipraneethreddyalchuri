@@ -70,7 +70,7 @@
   border: none;
   margin: 0;
 }
-*/ .transition-overlay {
+ .transition-overlay {
   position: fixed;
   top: 100%;
   left: 0;

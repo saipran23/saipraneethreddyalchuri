@@ -6,6 +6,7 @@ body {
   padding-top: 15px;
   /* cursor: none; */
   overflow-x: hidden;
+  text-align: justify;
 }
 
 .main-content {

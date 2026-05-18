@@ -64,8 +64,6 @@ function Hero() {
             }
         })
             .to('.intro', { y: -120, opacity: 0.9 }, 0)
-            .to('#hero-image', { y: -150, scale: 0.95 }, 0)
-
 
     }, [])
 
@@ -86,7 +84,7 @@ function Hero() {
     return (
         <div id="hero">
             <div ref={overlayRef} className="transition-overlay"></div>
-            <div className="intro">
+            <div className="hero-content">
                 <p className="hero-role">FULL STACK WEB DEVELOPER</p>
                 <h1 className="hero-title">
                     Hello, My name <br />
@@ -121,9 +119,6 @@ function Hero() {
                     </button>
                 </div>
 
-            </div>
-            <div id="hero-image">
-                <img src="/profile.png" alt="Profile" className="hero-img" />
             </div>
         </div>
     )

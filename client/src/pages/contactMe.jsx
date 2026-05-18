@@ -134,6 +134,7 @@ function Contactme() {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Enter your name"
+                        required
                     />
 
                     <label>Email</label>
@@ -142,6 +143,7 @@ function Contactme() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
+                        required
                     />
 
                     <label>Message</label>
@@ -150,6 +152,7 @@ function Contactme() {
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Enter your message"
                         className="textarea"
+                        required
                     />
 
                     <button className="send-btn" type="submit" disabled={loading}>

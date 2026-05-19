@@ -1,0 +1,22 @@
+.project-section{
+    width: 100%;
+  box-sizing: border-box;
+  padding: 25px 80px 88px;
+}
+
+.projects-header {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.project-sec-name{
+  color: #00F050;
+  font-size: 3rem;
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+}

@@ -16,7 +16,7 @@ function Hero() {
     const navigate = useNavigate();
 
 
-    const name = "Sai Praneeth Reddy";
+    const name = "A . Sai Praneeth Reddy";
     const roles = [
         "Mobile Developer",
         "Frontend Developer",
@@ -24,48 +24,43 @@ function Hero() {
         "FULL STACK WEB DEVELOPER",
     ];
 
-    useGSAP(() => {
+    // useGSAP(() => {
 
-        const tl = gsap.timeline();
+    //     const tl = gsap.timeline();
 
-        tl.from(".intro", {
-            x: "-100vw",
-            duration: 1.5,
-            ease: "power3.out"
-        })
-            .from("#hero-image", {
-                x: "100vw",
-                duration: 1.5,
-                ease: "power3.out"
-            }, "<");
+    //     tl.from(".hero-content", {
+    //         y: "100vw",
+    //         duration: 1.5,
+    //         ease: "power3.out"
+    //     });
 
-        tl.from(".hero-desc", {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            ease: "power3.out"
-        }, "-=0.5");
+    //     tl.from(".hero-desc", {
+    //         opacity: 0,
+    //         y: 30,
+    //         duration: 1,
+    //         ease: "power3.out"
+    //     }, "-=0.5");
 
-        tl.from(".hero-buttons", {
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-            filter: "blur(6px)",
-            duration: 0.8,
-            ease: "power3.out"
-        }, "-=0.6");
+    //     tl.from(".hero-buttons", {
+    //         opacity: 0,
+    //         y: 40,
+    //         scale: 0.95,
+    //         filter: "blur(6px)",
+    //         duration: 0.8,
+    //         ease: "power3.out"
+    //     }, "-=0.6");
 
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '#hero',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true,
-            }
-        })
-            .to('.intro', { y: -120, opacity: 0.9 }, 0)
+    //     gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: '#hero',
+    //             start: 'top top',
+    //             end: 'bottom top',
+    //             scrub: true,
+    //         }
+    //     })
+    //         .to('.hero-content', { y: 120, opacity: 0.9 }, 0)
 
-    }, [])
+    // }, [])
 
     const handleClick = () => {
         gsap.to(overlayRef.current, {

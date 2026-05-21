@@ -72,7 +72,7 @@ const ParticleBackground = () => {
         top: 0,
         left: 0,
         zIndex: -1,
-        background: "#212121",
+        background: "#0a0a0a",
       }}
     />
   );

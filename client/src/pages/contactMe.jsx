@@ -16,62 +16,62 @@ function Contactme() {
     const [loading, setLoading] = useState(false);
 
 
-    useGSAP(
-        () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".contactMe-section",
-                    start: "top 90%",
-                    end: "top 30%",
-                    scrub: 1.5,
-                    // invalidateOnRefresh: true,
-                    // markers: true,
-                }
-            });
+    // useGSAP(
+    //     () => {
+    //         const tl = gsap.timeline({
+    //             scrollTrigger: {
+    //                 trigger: ".contactMe-section",
+    //                 start: "top 90%",
+    //                 end: "top 30%",
+    //                 scrub: 1.5,
+    //                 // invalidateOnRefresh: true,
+    //                 // markers: true,
+    //             }
+    //         });
 
-        
-            tl.fromTo(".contactme-title-sec",
-                { opacity: 0, y: 32 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.42,
-                    ease: "power4.inOut"
-                }
-            )
-                .fromTo(".form-container",
-                    { opacity: 0, y: 32 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.42,
-                        ease: "power4.inOut"
-                    }, "<"
-                )
-                .fromTo(".form-container label, .form-container input, .form-container textarea",
-                    { opacity: 0, y: 16 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.45,
-                        stagger: 0.05,
-                        ease: "power4.inOut"
-                    }, 0.1
-                )
-                .fromTo(".send-btn",
-                    { opacity: 0, y: 16, scale: 0.98 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.42,
-                        ease: "power4.inOut"
-                    }, "-=0.2"
-                );
 
-        }
+    //         tl.fromTo(".contactme-title-sec",
+    //             { opacity: 0, y: 32 },
+    //             {
+    //                 opacity: 1,
+    //                 y: 0,
+    //                 duration: 0.42,
+    //                 ease: "power4.inOut"
+    //             }
+    //         )
+    //             .fromTo(".form-container",
+    //                 { opacity: 0, y: 32 },
+    //                 {
+    //                     opacity: 1,
+    //                     y: 0,
+    //                     duration: 0.42,
+    //                     ease: "power4.inOut"
+    //                 }, "<"
+    //             )
+    //             .fromTo(".form-container label, .form-container input, .form-container textarea",
+    //                 { opacity: 0, y: 16 },
+    //                 {
+    //                     opacity: 1,
+    //                     y: 0,
+    //                     duration: 0.45,
+    //                     stagger: 0.05,
+    //                     ease: "power4.inOut"
+    //                 }, 0.1
+    //             )
+    //             .fromTo(".send-btn",
+    //                 { opacity: 0, y: 16, scale: 0.98 },
+    //                 {
+    //                     opacity: 1,
+    //                     y: 0,
+    //                     scale: 1,
+    //                     duration: 0.42,
+    //                     ease: "power4.inOut"
+    //                 }, "-=0.2"
+    //             );
 
-    );
+    //     }
+
+    // );
 
 
     // const notify = () => toast.success('Send Successfully!');
@@ -121,44 +121,70 @@ function Contactme() {
                     },
                 }}
             />
-            <div className="contactme-title-sec">
-                <h2 className="contactme-title">Contact Me</h2>
-                <div className="line"></div>
-            </div>
-            <div className="contactMe">
+            <div className="contactme-border">
+                <div className="contactMe-content">
+                    <div className="contactme-title-sec">
+                        <h4 className="contactme-title">Contact Me</h4>
+                    </div>
 
-                <form className="form-container" onSubmit={handleSubmit}>
-                    <label>Name</label>
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Enter your name"
-                        required
-                    />
+                    <div className="contactme-title-msg">
+                        <h3>Let's Build <br /> something <br /> sharp </h3>
+                        <div className="contactme-line"></div>
+                        <p>Have an idea, role, or project in mind? Send a <br /> note and I'|| get back with a clear next step.</p>
+                    </div>
 
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email"
-                        required
-                    />
+                    <div className="contactme-tags">
+                        <ul>
+                            <li>Fast replies</li>
+                            <li>Open to freelance</li>
+                            <li>Remote friendly</li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <label>Message</label>
-                    <textarea
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Enter your message"
-                        className="textarea"
-                        required
-                    />
+                <div className="contactMe">
+                    <form className="form-container" onSubmit={handleSubmit}>
+                        <div className="contact-n-e">
+                            <div className="contact-classname">
+                                <label>Name</label>
+                                <input
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    placeholder="Enter your name"
+                                    required
+                                />
+                            </div>
 
-                    <button className="send-btn" type="submit" disabled={loading}>
-                        {loading ? "Sending..." : "Send"}
-                    </button>
-                </form>
+                            <div className="contact-email">
+                                <label>Email</label>
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="Enter your email"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div className="contact-m-b">
+
+                            <label>Message</label>
+                            <textarea
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                placeholder="Enter your message"
+                                className="textarea"
+                                required
+                            />
+
+                            <button className="send-btn" type="submit" disabled={loading}>
+                                {loading ? "Sending..." : "Send"}
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     )

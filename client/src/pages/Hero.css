@@ -1,3 +1,12 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 #hero {
   --max-width: 1200px;
 
@@ -8,18 +17,23 @@
   padding: 0 80px;
   min-height: calc(100vh - 70px);
   width: 100%;
-  padding: 3rem 1rem;
+  padding: 3rem 0;
   margin: 0 auto;
 }
 
 .hero-content {
-  max-width: var(--max-width);
+  position: relative;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   max-width: 900px;
   width: 100%;
   gap: 1rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .hero-title {
@@ -65,7 +79,7 @@
   border: 1px whitesmoke solid;
   text-decoration: none;
   color: white;
-  padding: 15px 18px;
+  padding: 13px 15px;
   border-radius: 10px;
 }
 
@@ -101,8 +115,10 @@
 
 @media (max-width: 600px) {
   #hero {
-    padding: 2rem 1rem;
-    min-height: calc(100vh - 60px);
+    padding: 2rem 0;
+  }
+  .hero-content {
+    padding: 0 0.75rem;
   }
 
   .hero-role {
@@ -119,13 +135,18 @@
   }
 
   .hero-buttons {
+    margin: 0;
     flex-direction: column;
     gap: 12px;
     width: 100%;
     padding: 6px 0;
   }
 
-  .linkdin-btn,
+  .linkdin-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 2px;
+  }
   .touch-btn {
     width: 100%;
     text-align: center;

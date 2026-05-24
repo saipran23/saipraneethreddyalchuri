@@ -1,42 +1,48 @@
 #hero {
+  --max-width: 1200px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 0 80px;
-  min-height: 100vh;
-  /* gap: 30px; */
+  min-height: calc(100vh - 70px);
   width: 100%;
-  padding: 20px;
+  padding: 3rem 1rem;
   margin: 0 auto;
 }
 
 .hero-content {
+  max-width: var(--max-width);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
   max-width: 900px;
   width: 100%;
+  gap: 1rem;
 }
 
 .hero-title {
   margin: 10px 0;
-  font-size: 60px;
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
   color: white;
   font-family: "Anton";
+  /* line-height: 1.02;  */
 }
 
 .hero-desc {
   margin: 10px 0;
-  font-size: 20px;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  max-width: 72ch;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-role {
   margin: 10px 0;
-  font-size: 25px;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
   color: #00f050;
-  text-align: left;
+  /* text-align: left; */
+  width: 100%;
 }
 
 .hero-buttons {
@@ -59,18 +65,18 @@
   border: 1px whitesmoke solid;
   text-decoration: none;
   color: white;
-  padding: 15px;
+  padding: 15px 18px;
   border-radius: 10px;
 }
 
 .touch-btn {
   background-color: #00f050;
-  padding: 15px;
+  padding: 15px 18px;
   border-radius: 10px;
   border: none;
   margin: 0;
 }
- .transition-overlay {
+.transition-overlay {
   position: fixed;
   top: 100%;
   left: 0;
@@ -78,4 +84,51 @@
   height: 100vh;
   background: #212121;
   z-index: 9999;
+}
+
+@media (max-width: 900px) {
+  #hero {
+    padding: 2.5rem 1rem;
+  }
+  .hero-content {
+    gap: 0.75rem;
+  }
+
+  .hero-buttons {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  #hero {
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 60px);
+  }
+
+  .hero-role {
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 8vw, 2.8rem);
+  }
+
+  .hero-desc {
+    font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+    padding: 0 6px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 6px 0;
+  }
+
+  .linkdin-btn,
+  .touch-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 14px;
+  }
 }

@@ -23,27 +23,29 @@ function App() {
       {loading ? (
         <Loader onComplete={() => setLoading(false)} />
       ) : (
-        <>
+        <div className="app-shell">
           {/* <Header /> */}
           <ParticleBackground />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <Skills />
-                  <Projects />
-                </>
-              }
-            />
+          <main className="app-content">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Hero />
+                    <Skills />
+                    <Projects />
+                  </>
+                }
+              />
 
-            <Route path="/projects/:projectTitle" element={<Project  />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+              <Route path="/projects/:projectTitle" element={<Project  />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </main>
 
           {/* <Footer /> */}
-        </>
+        </div>
       )}
     </>
   )

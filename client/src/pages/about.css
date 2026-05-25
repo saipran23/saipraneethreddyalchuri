@@ -1,46 +1,57 @@
-
-.about{
+.about {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .about-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 110px;
-  /* padding-top: 0; */
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 110px);
+  box-sizing: border-box;
 }
 
 .about {
-  max-width: 550px;
-  padding-left: 20px;
+  max-width: 640px;
+  padding-left: 0;
+  width: 100%;
 }
 
 .about-title {
   margin: 10px 0;
-  font-size: 60px;
+  font-size: clamp(2rem, 6.5vw, 3.75rem);
+  line-height: 1.02;
 }
 
 .about-desc {
   margin: 15px 0;
-  font-size: 18px;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  hyphens: auto;
   line-height: 1.6;
 }
 .line {
-  width: 250px;
-  height: 3px;
+  width: clamp(120px, 18vw, 250px);
+  height: 4px;
   background: #00f050;
   margin: 10px 0;
-  border-radius: 2px;
+  border-radius: 3px;
+  align-self: flex-start;
 }
 
 .profile-circle {
-  width: 400px;
-  height: 400px;
+  width: clamp(180px, 28vw, 400px);
+  height: clamp(180px, 28vw, 400px);
   border-radius: 50%;
   overflow: hidden;
-  padding-right: 0;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .profile-circle img {
@@ -50,24 +61,94 @@
   object-position: center top;
 }
 
-.about-buttons{
+.about-buttons {
   display: flex;
   justify-content: flex-start;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
 }
 
 .resume-btn {
-  padding: 12px;
+  padding: 12px 18px;
   border: none;
   border-radius: 8px;
   background: #00f050;
   color: white;
-  font-size: 20px;
+  font-size: clamp(0.95rem, 2.2vw, 1.25rem);
   cursor: pointer;
   margin-top: 10px;
-
 }
 
-.back-btn{
+.back-btn {
   text-decoration: none;
   color: #00f050;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(28px, 6vw, 56px);
+  }
+
+  .about {
+    text-align: center;
+    max-width: 720px;
+  }
+
+  .line {
+    margin-left: 0;
+    margin-right: 0;
+    align-self: center;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: clamp(20px, 6vw, 32px);
+    gap: 18px;
+  }
+
+  .about-title {
+    font-size: clamp(1.6rem, 8.5vw, 2.4rem);
+  }
+
+  .about-desc {
+    font-size: 0.98rem;
+    padding: 0 4px;
+  }
+
+  .profile-circle {
+    width: clamp(140px, 34vw, 220px);
+    height: clamp(140px, 34vw, 220px);
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-section {
+    padding: 18px 12px;
+  }
+  .about-title {
+    font-size: 1.5rem;
+  }
+  .about-desc {
+    font-size: 0.95rem;
+  }
+  .resume-btn {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
 }

@@ -15,12 +15,10 @@ body {
 }
 
 
-/* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Firefox */
 * {
   scrollbar-width: none;
 }

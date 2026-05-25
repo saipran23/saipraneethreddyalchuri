@@ -1,38 +1,36 @@
 .contactMe-section {
-  /* display: flex;
-  flex-direction: row; */
-  padding: 25px 80px    ;
-  /* justify-content: center; */
-  max-height: 100vh;
-  /* gap: 100px; */
-  /* align-items: center; */
+  padding: clamp(24px, 6vw, 48px) 1rem;
+  box-sizing: border-box;
 }
 
-.contactme-border{
+.contactme-border {
   display: flex;
   flex-direction: row;
-    justify-content: center;
+  justify-content: center;
   align-items: center;
-  margin: 0%;
-  padding: 50px 10px;
-   /* border: 1px solid #00F050; */
-   border-radius: 20px;
-   gap: 100px;
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 40px) 10px;
+  max-width: 1200px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  gap: clamp(20px, 6vw, 100px);
 }
 
 .contactMe-content {
   display: flex;
   flex-direction: column;
-  max-width: 450px;
+  max-width: 45%;
+  min-width: 280px;
+  box-sizing: border-box;
 }
 
 .contactme-title-sec {
-   margin: 0 0 30px 0;
+  margin: 0 0 30px 0;
   padding: 0;
 }
 
 .contactme-title {
-  color: #00F050;
+  color: #00f050;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -46,19 +44,19 @@
 }
 
 .contactme-title-msg h3 {
-  font-size: 56px;
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.1;
-  margin: 0 0 20px 0;
   padding: 0;
   letter-spacing: -1px;
+  font-size: clamp(1.6rem, 5.5vw, 3.2rem);
+  line-height: 1.08;
+  margin: 0 0 12px 0;
 }
 
 .contactme-line {
   width: 200px;
   height: 3px;
-  background-color:#00F050;
+  background-color: #00f050;
   margin: 20px 0 25px 0;
   border-radius: 2px;
 }
@@ -80,11 +78,11 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .contactme-tags li {
-  border: 1px solid #00F050;
+  border: 1px solid #00f050;
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 25px;
@@ -96,27 +94,26 @@
 .contactMe {
   display: flex;
   flex-direction: column;
-  max-width: 550px;
+  max-width: 55%;
+  box-sizing: border-box;
   width: 100%;
-
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 18px;
 }
 
-.contact-n-e{
+.contact-n-e {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 12px;
   width: 100%;
-
 }
 
-.contact-classname, 
-.contact-email{
+.contact-classname,
+.contact-email {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -133,14 +130,14 @@
 .contact-classname input,
 .contact-email input {
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid #00F050;
+  border: 1px solid #00f050;
   color: #ffffff;
-  padding: 12px 16px;
+  padding: 12px 14px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
   font-family: inherit;
 }
-.contact-m-b{
+.contact-m-b {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -155,7 +152,7 @@
 
 .textarea {
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid #00F050;
+  border: 1px solid #00f050;
   color: #ffffff;
   padding: 12px 16px;
   border-radius: 8px;
@@ -166,18 +163,90 @@
 }
 
 .send-btn {
-  background-color: #00F050;
+  background-color: #00f050;
   color: #ffffff;
   border: none;
-  padding: 14px 30px;
+  padding: 12px 20px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
   font-weight: 600;
   cursor: pointer;
   margin-top: 15px;
   letter-spacing: 0.5px;
 }
 
+@media (max-width: 900px) {
+  .contactme-border {
+    flex-direction: column;
+    align-items: stretch;
+    padding: clamp(18px, 4vw, 32px);
+    gap: 28px;
+  }
+
+  .contactMe-content {
+    max-width: 100%;
+    min-width: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contactme-title-msg h3 {
+    font-size: clamp(1.4rem, 6vw, 2.4rem);
+  }
+
+  .contactMe {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-n-e {
+    /* flex-direction: column; */
+    gap: 12px;
+  }
+  .project-techStack-list,
+  .contactme-tags ul {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .contactMe-content {
+    padding: 0;
+  }
+  .contactme-title {
+    font-size: 0.95rem;
+  }
+  .contactme-title-msg h3 {
+    font-size: clamp(1.1rem, 8vw, 1.6rem);
+  }
+  .contactme-line {
+    width: 140px;
+  }
+
+  .form-container {
+    gap: 14px;
+  }
+
+  .contact-n-e {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .textarea {
+    min-height: 120px;
+    max-height: 180px;
+  }
+
+  .send-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .contactme-tags li {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
 
 /* 
 

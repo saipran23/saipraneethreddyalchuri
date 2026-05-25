@@ -29,7 +29,7 @@ function Project() {
 
     return (
         <div id="project-section">
-            <div className="back-button">
+            <div className="project-back-button">
                 <a href="#"
                     className="back-btn"
                     onClick={(e) => {
@@ -40,7 +40,6 @@ function Project() {
                     </path><path d="M19 12H5"></path>
                     </svg>Back
                 </a>
-
             </div>
             <div className="project-hero-section">
                 <div className="project-hero-content">

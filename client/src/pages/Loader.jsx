@@ -5,58 +5,60 @@ import "./loader.css";
 
 function Loader({ onComplete }) {
     useGSAP(() => {
-        // block doum -> up
-        let t = gsap.timeline();
-    
-        t.to(".block", {
-            y: "-100%",
-            duration: 1.8,
-            stagger: 0.1,
-            ease: "sine.inOut",
-            // repeat: -1,
-            yoyo: true,
-        });
 
 
 
-        // 🔤 Text animation
+
+        //  Text animation (per-character)
         const tl = gsap.timeline({
             onComplete: onComplete
         });
 
-        tl.from(".loader-text span", {
-            y: -100,
+        tl.from(".loader-char", {
+            y: 40,
             opacity: 0,
-            stagger: 0.05,
-            duration: 1,
+            stagger: 0.04,
+            duration: 0.9,
             ease: "power4.out",
         })
-            .to({}, { duration: 0.8 })
-            .to(".loader-text span", {
-                y: -120,
+            .to({}, { duration: 0.7 })
+            .to(".loader-char", {
+                y: -70,
                 opacity: 0,
                 stagger: 0.03,
-                duration: 0.8,
+                duration: 0.6,
                 ease: "power2.in",
+            })
+            .to(".block", {
+                y: "-100%",
+                duration: 0.8,
+                ease: "sine.inOut",
+                yoyo: true,
             });
-            
+
 
     }, []);
 
 
-    const name = "PRANEETHREDDY"
+    const name = "ALCHURI. PRANEETH REDDY";
+
+    const words = name.split(" ");
 
     return (
         <div className="loader">
             <div className="blocks">
-                {[...Array(6)].map((_, i) => (
+                {[...Array(10)].map((_, i) => (
                     <div key={i} className="block"></div>
                 ))}
             </div>
 
-            <h1 className="loader-text">
-                {name.split("").map((char, i) => (
-                    <span key={i}>{char} </span>
+            <h1 className="loader-text" data-allow-wrap="true">
+                {words.map((word, wi) => (
+                    <span className="loader-word" key={wi}>
+                        {word.split("").map((char, ci) => (
+                            <span className="loader-char" key={ci}>{char}</span>
+                        ))}
+                    </span>
                 ))}
             </h1>
         </div>

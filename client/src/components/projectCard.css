@@ -5,7 +5,7 @@
   padding: 2rem 0;
   border-radius: 8px;
   cursor: pointer;
-  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
 }
 
 .product-card-content {
@@ -20,7 +20,7 @@
 }
 
 .project-card-number {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
   font-weight: 300;
   letter-spacing: 2px;
 }
@@ -30,7 +30,7 @@
 }
 
 .product-card-title h3 {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   margin: 0;
   font-weight: 600;
   line-height: 1.2;
@@ -39,22 +39,89 @@
 .projectCard-skills {
   margin-top: auto;
   padding-top: 1.5rem;
-  padding-left: 2.5rem;
+  padding-left: clamp(1rem, 4vw, 2.5rem);
 }
 
 .projectCard-skills-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 40px;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .projectCard-skills-items {
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+  font-size: clamp(0.8rem, 1.8vw, 0.875rem);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 900px) {
+  .product-card {
+    padding: 1.5rem 0;
+  }
+
+  .product-card-title h3 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+  }
+
+  .projectCard-skills {
+    padding-left: clamp(0.75rem, 3vw, 1.8rem);
+  }
+
+  .projectCard-skills-list {
+    gap: clamp(0.8rem, 1.5vw, 1.5rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    padding: 1.25rem 0;
+    padding-left: 0.5rem;
+    align-items: center;
+  }
+
+  .product-card-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .project-card-number {
+    font-size: 0.85rem;
+  }
+
+  .product-card-title h3 {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+  }
+
+  .projectCard-skills {
+    padding-top: 1rem;
+    padding-left: 0.75rem;
+  }
+
+  .projectCard-skills-list {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .projectCard-skills-items {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .product-card {
+    padding: 1rem 0;
+  }
+
+  .product-card-title h3 {
+    font-size: 1.3rem;
+  }
+
+  .projectCard-skills-list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
